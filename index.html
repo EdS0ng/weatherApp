@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather</title>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="header container-fluid">
+    <h1>Weather</h1>
+    <h6>Powered by</h6>
+    <img src="http://icons.wxug.com/graphics/wu2/logo_130x80.png" alt="WUlogo" class="logo">
+  </div>
+    <button class="addLocation" data-toggle="modal" data-target="#inputLocation">
+      <span class="glyphicon glyphicon-plus"></span>
+    </button>
+  <div class="container-fluid hide" >
+    <div class="row">
+      <div class="currentConditions col-sm-6"></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="forecast1 col-sm-2"></div>
+      <div class="forecast2 col-sm-2"></div>
+      <div class="forecast3 col-sm-2"></div>
+      <div class="forecast4 col-sm-2"></div>
+    </div>  
+  </div>
+  <div id="inputLocation" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Input Location</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class = "modal-body">
+          <label for="City">City: </label>
+          <input type="text" id="City">
+          <label for="State">State: </label>
+          <input type="text" id="State" maxlength="2">
+          <label for="Zip" class="zipLabel"> Or Zipcode: </label>
+          <input type="text" id="Zip" maxlength="5">
+        </div>
+        <div class="modal-footer">
+          <button id="insertLocation" data-dismiss="modal">Input</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

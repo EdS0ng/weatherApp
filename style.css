@@ -1,0 +1,40 @@
+h1{
+  text-align: center;
+}
+h6 {
+  position: absolute;
+  display: inline-block;
+  left: 45%;
+  top: 12%;
+}
+.logo{
+  position: absolute;
+  left: 49%;
+  max-width: 6vw;
+}
+#State{
+  display: inline-block;
+  width: 3vw;
+}
+#Zip{
+  width: 7vw;
+}
+.zipLabel{
+  margin-left: 4vw;
+}
+.forecast1,.forecast2,.forecast3,.forecast4{
+  border:1px solid black;
+  text-align: center;
+  background-color: #c5c5c5;
+}
+.currentConditions{
+  text-align: center;
+  margin-top: 4vw;
+  margin-bottom:6%;
+  margin-left: 25%;
+  background-color: #c5c5c5;
+}
+.addLocation{
+  position: absolute;
+  left:10%;
+}

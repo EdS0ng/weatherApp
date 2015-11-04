@@ -38,3 +38,8 @@ h6 {
   position: absolute;
   left:10%;
 }
+.descrip{
+  position: absolute;
+  left:14%;
+  font-size:15px;
+}

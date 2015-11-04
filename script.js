@@ -4,6 +4,9 @@
   
   $('#insertLocation').click(main);
 
+   getURL('autoip');
+ 
+
   function main(){
     var city = $('#City').val();
     var state = $('#State').val();
@@ -34,14 +37,21 @@
     });
   }
 
+  function getGeoLoc(url){
+    $.get(url).done(function(data){
+      $('#City').val(data.location.city);
+      $('#State').val(data.location.state);
+      $('#Zip').val(data.location.zip);
+    })
+  }
+
   function getURL(location){
     var url3 = '.json';
     var url2 = ['conditions/q/','forecast/q/'];
     var url1 = 'http://api.wunderground.com/api/3c7b147ea110f7cf/';
 
     if (location==='autoip'){
-      var getLocation = getData(url1+'geolookup/q/'+location+url3);
-      return getLocation;
+      getGeoLoc(url1+'geolookup/q/'+location+url3);
     }
     var urlArray = [];
     url2.forEach(function(dataSet){
@@ -52,11 +62,11 @@
   }
 
   function updateDOM(obj){
-    console.log(obj);
     var div1= [obj.display_location.full+'<br>','<img src = '+obj.icon_url+'>'+'<br>',
               obj.weather+'<br>',obj.observation_time+'<br>','Temp: '+obj.temperature_string+'<br>',
               'Feels like: '+obj.feelslike_string+'<br>','Precipitation Today: '+obj.precip_today_string+'<br>',
               'Relative Humidity: '+obj.relative_humidity];
+
     $('.currentConditions').empty().append(div1);
     var day1 = obj[0];
     var day2 = obj[1];
